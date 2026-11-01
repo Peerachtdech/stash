@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stash Test</title>
+<meta name="apple-mobile-web-app-title" content="Stash Test">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- ทดสอบ: ฝังเว็บแอปไว้ในหน้านี้ แทนการเด้งไป script.google.com (ไม่ผูก manifest เพื่อให้หน้าจอโฮมเปิดหน้านี้ตรง ๆ) -->
+<style>
+  html, body { margin: 0; height: 100%; background: #f4f6f7; }
+  body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); box-sizing: border-box; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  #msg { position: fixed; inset: auto 16px 24px 16px; padding: 12px 14px; border-radius: 12px;
+    background: #1d1f2b; color: #fff; font: 14px/1.4 -apple-system, sans-serif; display: none; }
+  #msg a { color: #9db0ff; }
+</style>
+</head>
+<body>
+<iframe id="app" src="https://script.google.com/macros/s/AKfycbwlqgV60UR_EQsi1f4mrYRv5rvogQbb4d3ZjEcURvxVK-lTmjI7sukENAOMoxPwXhDGrg/exec"
+  allow="camera; clipboard-write" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<div id="msg">ถ้าหน้าว่างหรือขึ้น error แปลว่า iPhone ไม่ยอมให้ล็อกอินในหน้าที่ฝัง
+  · <a href="https://script.google.com/macros/s/AKfycbwlqgV60UR_EQsi1f4mrYRv5rvogQbb4d3ZjEcURvxVK-lTmjI7sukENAOMoxPwXhDGrg/exec">เปิดแบบเดิม</a></div>
+<script>
+  // ข้อความช่วยเหลือโผล่หลัง 8 วิ (ถ้าแอปขึ้นปกติ แตะข้อความเพื่อปิด)
+  var msg = document.getElementById('msg');
+  setTimeout(function () { msg.style.display = 'block'; }, 8000);
+  msg.addEventListener('click', function (e) { if (e.target.tagName !== 'A') msg.style.display = 'none'; });
+</script>
+</body>
+</html>
